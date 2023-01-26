@@ -1,0 +1,26 @@
+.parentCard{
+    display: flex;
+    color: white;
+   
+}
+
+.card1{
+    padding: 1.5rem;
+    width: 40rem;
+    margin: 0.3rem;
+    background-color: rgb(215, 220, 60);
+}
+
+.card2{
+    padding: 1.5rem;
+    width: 40rem;
+    margin: 0.3rem;
+    background-color: greenyellow;
+}
+
+.card3{
+    padding: 1.5rem;
+    width: 40rem;
+    margin: 0.3rem;
+    background-color: red;
+}
