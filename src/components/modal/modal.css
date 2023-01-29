@@ -1,5 +1,16 @@
-.circle{
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
+.circle-input {
+  border-radius: 100px;
+}
+
+.priority-text {
+  color: white;
+  font-weight: bold;
+
+}
+
+#priority {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
 }

@@ -1,45 +1,47 @@
-.cardDetails1{
+.cardDetails1 {
     width: 20rem;
     border-radius: 20px;
     margin: 0.3rem;
 }
-.cardDetails2{
+
+.cardDetails2 {
     width: 75rem;
     margin: 0.3rem;
     border-radius: 20px;
 }
-.parentCard1{
+
+.parentCard1 {
     display: flex;
     text-align: center;
-    
+
 }
 
-.titulli{
-   font-size: medium;
-   text-align: left;
-   padding-left: 0.6rem;
-   padding-bottom: 0.5rem ;
-   padding-top: 0.3rem ;
-}
-.buttoni{
-   width: 95%;
+.titulli {
+    font-size: medium;
+    text-align: left;
+    padding-left: 0.6rem;
+    padding-bottom: 0.5rem;
+    padding-top: 0.3rem;
 }
 
-.buttoni1{
+.buttoni {
+    width: 95%;
+}
+
+.buttoni1 {
     width: 95%;
     margin-top: 0.5rem;
     background-color: rgb(205, 205, 205);
- }
+}
 
- .buttoni2{
+.buttoni2 {
     width: 40%;
     margin-top: 19rem;
     margin-bottom: 1.3rem;
-    
- }
 
-.detajet1{
-  display: flex;
-  justify-content: space-between
 }
 
+.detajet1 {
+    display: flex;
+    justify-content: space-between
+}

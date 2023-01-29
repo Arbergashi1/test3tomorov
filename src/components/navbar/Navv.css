@@ -1,0 +1,36 @@
+.navcon {
+    background-color: rgb(224, 224, 224);
+    margin: 0.2rem;
+    padding: 0.1rem;
+    border-radius: 10px;
+
+}
+
+.searchi {
+    display: flex;
+
+}
+
+.containern {
+    display: flex;
+    text-decoration: none;
+}
+
+.ngjyra {
+    background-color: #5fa342;
+
+}
+
+.ngjyra:hover {
+    background-color: #638e51;
+
+}
+
+.lorem {
+    font-size: 1rem;
+    padding-top: 0.7rem;
+}
+
+.hapsir {
+    padding: 0.1rem;
+}

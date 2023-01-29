@@ -1,26 +1,35 @@
-.parentCard{
+.parentCard {
     display: flex;
     color: white;
-   
+    text-align: center;
+    background-color: rgb(224, 224, 224);
+    margin: 0.2rem;
+    padding: 0.1rem;
+    border-radius: 10px;
+
 }
 
-.card1{
-    padding: 1.5rem;
+
+.card1 {
+    padding: 2rem;
     width: 40rem;
     margin: 0.3rem;
-    background-color: rgb(215, 220, 60);
+    background-color: #d1cb56;
+    border-radius: 10px;
 }
 
-.card2{
-    padding: 1.5rem;
+.card2 {
+    padding: 2rem;
     width: 40rem;
     margin: 0.3rem;
-    background-color: greenyellow;
+    background-color: #5fa342;
+    border-radius: 10px;
 }
 
-.card3{
-    padding: 1.5rem;
+.card3 {
+    padding: 2rem;
     width: 40rem;
     margin: 0.3rem;
-    background-color: red;
+    background-color: #dd3535;
+    border-radius: 10px;
 }

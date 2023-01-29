@@ -1,0 +1,41 @@
+.containerr {
+  background-color: rgb(224, 224, 224);
+  padding: 1rem;
+  margin: 0.3rem;
+  border-radius: 10px;
+  padding-top: 1rem;
+}
+
+.tablea {
+  width: 99%;
+  margin: auto;
+
+}
+
+.tablea thead {
+  background-color: #333;
+  color: #fff;
+
+}
+
+.tablea thead tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.tablea thead th {
+  padding: 0.5rem;
+  font-weight: 500;
+}
+
+.tablea tbody tr {
+  border-bottom: 1px solid #ccc;
+}
+
+.tablea tbody td {
+  padding: 0.5rem;
+}
+
+.tablea tbody a {
+  color: rgb(5, 101, 218);
+
+}
