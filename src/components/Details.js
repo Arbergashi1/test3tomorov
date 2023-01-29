@@ -1,40 +1,53 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Card } from 'react-bootstrap'
+import { ArrowDownRight, ArrowLeft } from 'react-feather';
+import { Link } from 'react-router-dom';
 import "./carddetails.css"
 
 const Details = () => {
 
     const [search, setSearch] = useState("");
     const [filteredData, setFilteredData] = useState([]);
-    
+    const [editId, setEditId] = useState(null);
+
+    const handleEdit = (id) => {
+        setEditId(id);
+      };
+      
+      const handleSave = (id, updatedData) => {
+        setFilteredData(filteredData.map((item) => (item.id === id ? {...item, ...updatedData} : item)));
+        setEditId(null);
+      };
+
+      
     const Employees = [
         {
             id:"1",
             item:"G42295",
             quantity:"10",
             description:"Lorem Ipsum is simply dummy text of the printing ",
-            notes:"Lorem Ipsum is simply dummy text of the printing ",
+            notes:"Sidewalk Shed",
         },
         {
             id:"2",
             item:"M721",
             quantity:"83",
             description:"Lorem Ipsum is simply dummy text of the printing ",
-            notes:"Lorem Ipsum is simply dummy text of the printing ",
+            notes:"Sidewalk Shed",
         },
         {
             id:"3",
             item:"M94796",
             quantity:"31",
             description:"Lorem Ipsum is simply dummy text of the printing ",
-            notes:"Lorem Ipsum is simply dummy text of the printing ",
+            notes:"Sidewalk Shed",
         },
         {
             id:"4",
             item:"S25907",
             quantity:"47",
             description:"Lorem Ipsum is simply dummy text of the printing ",
-            notes:"Lorem Ipsum is simply dummy text of the printing ",
+            notes:"Sidewalk Shed",
         },
 
     ]
@@ -45,6 +58,13 @@ const Details = () => {
     const handleSearch = (e) => {
         setSearch(e.target.value);
     }
+
+       
+
+
+
+  
+
     
   return (
     
@@ -54,8 +74,12 @@ const Details = () => {
         <div className='detajet'>
         <h1 className='titulli'>24 avni rrustemi, new yourn</h1>
         <Button clas variant='success' className='buttoni'>SideWalk Sheed</Button>
-        <Button clas variant='' className='buttoni1'>Scafold</Button>
-        <Button clas variant='primary' className='buttoni2'>Go Back</Button>
+        <Link to='/details2'>
+      <Button  className='buttoni1'>Scaffold</Button>
+        </Link>
+        <Link to='/'>
+        <Button clas variant='primary' className='buttoni2'> <ArrowLeft/> Go Back </Button>
+        </Link>
         </div>
       </Card>
       <Card className="cardDetails2">
@@ -67,53 +91,77 @@ const Details = () => {
         </form>
         </div>
         <table class="table table-striped">
-  <thead>
-    <tr>
-      <th scope="col">Nr</th>
-      <th scope="col">Item</th>
-      <th scope="col">Quantity</th>
-      <th scope="col">Description</th>
-      <th scope="col">Notes</th>
-    </tr>
-  </thead>
- 
-    <tbody>
-        {
-            filteredData.length > 0 
-            ?
-            filteredData.map((item)  =>{
-                return(
-                    <tr>
-                         <td>
-                            {item.id}
-                        </td>
-                        <td>
-                            {item.item}
-                        </td>
-                        <td>
-                            {item.quantity}
-                        </td>
-                        <td>
-                            {item.description}
-                        </td>
-                        <td>
-                            {item.notes}
-                        </td>
-                    </tr>
-                )
-            }) : "no"
-        }
-    </tbody>
- 
-</table>
-        
-      </Card>
-     
-      </div>
-   
-    
-   
-  )
-}
+      <thead>
+        <tr>
+          <th scope="col">Nr</th>
+          <th scope="col">Item</th>
+          <th scope="col">Quantity</th>
+          <th scope="col">Description</th>
+          <th scope="col">Notes</th>
+          <th scope="col">Options</th>
+        </tr>
+      </thead>
+      <tbody>
+        {filteredData.map((item) => (
+          <tr>
+            <td>{item.id}</td>
+            {editId === item.id ? (
+              <>
+                <td>
+                  <input
+                    type="text"
+                    value={item.item}
+                    onChange={(e) => handleSave(item.id, {item: e.target.value})}
+                    style={{ backgroundColor: '#f2f2f2', padding: '0.1rem', borderRadius: '5px', textAlign:'center', border: 'none'}}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    value={item.quantity}
+                    onChange={(e) => handleSave(item.id, {quantity: e.target.value})}
+                    style={{ backgroundColor: '#f2f2f2', padding: '0.1rem', borderRadius: '5px', textAlign:'center', border: 'none'}}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    value={item.description}
+                    onChange={(e) => handleSave(item.id, {description: e.target.value})}
+                    style={{ backgroundColor: '#f2f2f2', padding: '0.1rem', borderRadius: '5px', textAlign:'center', border: 'none'}}
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    value={item.notes}
+                    onChange={(e) => handleSave(item.id, {notes: e.target.value})}
+                    style={{ backgroundColor: '#f2f2f2', padding: '0.1rem', borderRadius: '5px', textAlign:'center', border: 'none'}}
+                  />
+                </td>
+              </>
+            ) : (
+              <>
+                <td>{item.item}</td>
+                <td>{item.quantity}</td>
+                <td>{item.description}</td>
+                <td>{item.notes}</td>
+              </>
+            )}
+            <td>
+              {editId === item.id ? (
+                <Button onClick={() => handleSave(item.id, item)} variant='success'>Save</Button>
+              ) : (
+                <Button onClick={() => handleEdit(item.id)} variant='info'>Edit</Button>
+              )}
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+    </Card>
+    </div>
+  );
+};
 
 export default Details

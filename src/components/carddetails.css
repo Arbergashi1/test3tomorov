@@ -32,6 +32,12 @@
     width: 95%;
     margin-top: 0.5rem;
     background-color: rgb(205, 205, 205);
+    
+}
+.buttoni1:hover {
+    width: 95%;
+    margin-top: 0.5rem;
+    background-color: rgb(201, 208, 66);
 }
 
 .buttoni2 {

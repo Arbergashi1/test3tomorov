@@ -106,9 +106,9 @@ function ModalDiv({ showModal, setShowModal, refresher }) {
             }}
           >
             <option value="">Select Status</option>
-            <option value="Completed">Completed</option>
-            <option value="In Progress">In Progress</option>
-            <option value="On Hold">On Hold</option>
+            <option value="Completed" style={{backgroundColor:'green'}}>Completed</option>
+            <option value="In Progress" style={{backgroundColor:'yellow'}}>In Progress</option>
+            <option value="On Hold" style={{backgroundColor:'red'}}>On Hold</option>
           </select>
 
           {/* <textarea className='form-control' style={{height:'180px'}} placeholder='Enter notes....' value={content} onChange={(e)=>setContent(e.target.value)} ></textarea> */}
@@ -122,11 +122,11 @@ function ModalDiv({ showModal, setShowModal, refresher }) {
   </DropdownButton> */}
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleCancel}>
-            Cancel
+          <Button variant="danger" onClick={handleCancel}>
+            Cancel Changes
           </Button>
-          <Button variant="primary" onClick={handleAdd}>
-            <Plus /> Add
+          <Button className="ngjyra"  onClick={handleAdd}>
+            Save Changes
           </Button>
         </Modal.Footer>
       </Modal>
